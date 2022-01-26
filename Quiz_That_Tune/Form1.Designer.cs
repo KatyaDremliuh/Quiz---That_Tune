@@ -74,7 +74,7 @@ namespace Quiz_That_Tune
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 453);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnSettings);
