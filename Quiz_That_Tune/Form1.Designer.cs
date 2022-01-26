@@ -45,6 +45,7 @@ namespace Quiz_That_Tune
             this.btnSettings.TabIndex = 0;
             this.btnSettings.Text = "Настройки";
             this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnPlay
             // 

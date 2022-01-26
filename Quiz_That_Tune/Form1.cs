@@ -12,6 +12,8 @@ namespace Quiz_That_Tune
 {
     public partial class fMain : Form
     {
+        fParams _fp = new fParams();
+
         public fMain()
         {
             InitializeComponent();
@@ -20,6 +22,11 @@ namespace Quiz_That_Tune
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close(); // обращаемся к форме через this. Закрыть форму
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            _fp.ShowDialog(); // показать форму с параметрами
         }
     }
 }
