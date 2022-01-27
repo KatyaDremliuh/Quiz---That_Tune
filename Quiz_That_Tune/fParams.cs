@@ -13,6 +13,7 @@ namespace Quiz_That_Tune
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            Quiz.WriteParams();
             this.Hide(); // закрывает форму fParams
         }
 
