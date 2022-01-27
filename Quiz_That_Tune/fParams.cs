@@ -33,8 +33,8 @@ namespace Quiz_That_Tune
                 lbMusicList.Items.Clear();
                 lbMusicList.Items.AddRange(musicList);
 
-                Quiz.list.Clear();
-                Quiz.list.AddRange(musicList);
+                Quiz.TrackList.Clear();
+                Quiz.TrackList.AddRange(musicList);
             }
         }
     }

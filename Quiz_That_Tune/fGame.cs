@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Quiz_That_Tune
@@ -19,7 +12,7 @@ namespace Quiz_That_Tune
 
         private void btbNext_Click(object sender, EventArgs e)
         {
-            WMP.URL = Quiz.list[0];
+            WMP.URL = Quiz.TrackList[0];
         }
     }
 }
