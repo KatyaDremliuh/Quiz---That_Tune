@@ -51,7 +51,7 @@ namespace Quiz_That_Tune
             // 
             this.btnClearList.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearList.ForeColor = System.Drawing.Color.Blue;
-            this.btnClearList.Location = new System.Drawing.Point(12, 256);
+            this.btnClearList.Location = new System.Drawing.Point(279, 256);
             this.btnClearList.Name = "btnClearList";
             this.btnClearList.Size = new System.Drawing.Size(232, 77);
             this.btnClearList.TabIndex = 1;
@@ -62,12 +62,13 @@ namespace Quiz_That_Tune
             // 
             this.btbSelectFolder.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btbSelectFolder.ForeColor = System.Drawing.Color.Blue;
-            this.btbSelectFolder.Location = new System.Drawing.Point(281, 256);
+            this.btbSelectFolder.Location = new System.Drawing.Point(12, 256);
             this.btbSelectFolder.Name = "btbSelectFolder";
             this.btbSelectFolder.Size = new System.Drawing.Size(225, 77);
             this.btbSelectFolder.TabIndex = 2;
             this.btbSelectFolder.Text = "Выбрать папку";
             this.btbSelectFolder.UseVisualStyleBackColor = true;
+            this.btbSelectFolder.Click += new System.EventHandler(this.btbSelectFolder_Click);
             // 
             // cbAllDirectories
             // 
@@ -102,6 +103,7 @@ namespace Quiz_That_Tune
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // fParams
             // 
