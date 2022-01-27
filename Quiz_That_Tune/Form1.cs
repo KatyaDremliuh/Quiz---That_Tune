@@ -13,6 +13,7 @@ namespace Quiz_That_Tune
     public partial class fMain : Form
     {
         fParams _fp = new fParams();
+        private fGame fg = new fGame();
 
         public fMain()
         {
@@ -27,6 +28,11 @@ namespace Quiz_That_Tune
         private void btnSettings_Click(object sender, EventArgs e)
         {
             _fp.ShowDialog(); // показать форму с параметрами
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            fg.ShowDialog();  // показать форму "игра"
         }
     }
 }

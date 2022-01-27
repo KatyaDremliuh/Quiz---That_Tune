@@ -24,6 +24,7 @@ namespace Quiz_That_Tune
         private void btbSelectFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
+
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 string[] musicList =
@@ -31,6 +32,9 @@ namespace Quiz_That_Tune
                         cbAllDirectories.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
                 lbMusicList.Items.Clear();
                 lbMusicList.Items.AddRange(musicList);
+
+                Quiz.list.Clear();
+                Quiz.list.AddRange(musicList);
             }
         }
     }
