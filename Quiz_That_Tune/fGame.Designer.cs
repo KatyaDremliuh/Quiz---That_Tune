@@ -29,6 +29,7 @@ namespace Quiz_That_Tune
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGame));
             this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
             this.btbNext = new System.Windows.Forms.Button();
@@ -38,6 +39,9 @@ namespace Quiz_That_Tune
             this.lblScorePlayer2 = new System.Windows.Forms.Label();
             this.btbPause = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
+            this.lblSongsCounter = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +51,7 @@ namespace Quiz_That_Tune
             this.WMP.Location = new System.Drawing.Point(12, 366);
             this.WMP.Name = "WMP";
             this.WMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMP.OcxState")));
-            this.WMP.Size = new System.Drawing.Size(222, 75);
+            this.WMP.Size = new System.Drawing.Size(216, 75);
             this.WMP.TabIndex = 0;
             this.WMP.Visible = false;
             // 
@@ -111,6 +115,7 @@ namespace Quiz_That_Tune
             this.btbPause.TabIndex = 6;
             this.btbPause.Text = "Пауза";
             this.btbPause.UseVisualStyleBackColor = true;
+            this.btbPause.Click += new System.EventHandler(this.btbPause_Click);
             // 
             // btnContinue
             // 
@@ -121,6 +126,30 @@ namespace Quiz_That_Tune
             this.btnContinue.TabIndex = 7;
             this.btnContinue.Text = "Продолжить";
             this.btnContinue.UseVisualStyleBackColor = true;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            // 
+            // lblSongsCounter
+            // 
+            this.lblSongsCounter.AutoSize = true;
+            this.lblSongsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblSongsCounter.Location = new System.Drawing.Point(351, 114);
+            this.lblSongsCounter.Name = "lblSongsCounter";
+            this.lblSongsCounter.Size = new System.Drawing.Size(36, 39);
+            this.lblSongsCounter.TabIndex = 8;
+            this.lblSongsCounter.Text = "0";
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(12, 204);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(755, 35);
+            this.progressBar.TabIndex = 9;
+            this.progressBar.Value = 50;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // fGame
             // 
@@ -128,6 +157,8 @@ namespace Quiz_That_Tune
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(802, 453);
+            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.lblSongsCounter);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btbPause);
             this.Controls.Add(this.lblScorePlayer2);
@@ -140,6 +171,7 @@ namespace Quiz_That_Tune
             this.Name = "fGame";
             this.Text = "Игра";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGame_FormClosed);
+            this.Load += new System.EventHandler(this.fGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,5 +188,8 @@ namespace Quiz_That_Tune
         private System.Windows.Forms.Label lblScorePlayer2;
         private System.Windows.Forms.Button btbPause;
         private System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.Label lblSongsCounter;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Timer timer;
     }
 }
