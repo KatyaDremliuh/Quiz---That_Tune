@@ -36,24 +36,32 @@ namespace Quiz_That_Tune
             this.cbAllDirectories = new System.Windows.Forms.CheckBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.gbGameSettings = new System.Windows.Forms.GroupBox();
+            this.cbGameDuration = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbMusicDuration = new System.Windows.Forms.ComboBox();
+            this.cbRandomStart = new System.Windows.Forms.CheckBox();
+            this.gbGameSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbMusicList
             // 
+            this.lbMusicList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbMusicList.FormattingEnabled = true;
             this.lbMusicList.ItemHeight = 16;
             this.lbMusicList.Location = new System.Drawing.Point(0, 0);
             this.lbMusicList.Name = "lbMusicList";
-            this.lbMusicList.Size = new System.Drawing.Size(800, 244);
+            this.lbMusicList.Size = new System.Drawing.Size(883, 244);
             this.lbMusicList.TabIndex = 0;
             // 
             // btnClearList
             // 
             this.btnClearList.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearList.ForeColor = System.Drawing.Color.Blue;
-            this.btnClearList.Location = new System.Drawing.Point(279, 256);
+            this.btnClearList.Location = new System.Drawing.Point(308, 256);
             this.btnClearList.Name = "btnClearList";
-            this.btnClearList.Size = new System.Drawing.Size(232, 77);
+            this.btnClearList.Size = new System.Drawing.Size(244, 58);
             this.btnClearList.TabIndex = 1;
             this.btnClearList.Text = "Очистить список";
             this.btnClearList.UseVisualStyleBackColor = true;
@@ -64,7 +72,7 @@ namespace Quiz_That_Tune
             this.btbSelectFolder.ForeColor = System.Drawing.Color.Blue;
             this.btbSelectFolder.Location = new System.Drawing.Point(12, 256);
             this.btbSelectFolder.Name = "btbSelectFolder";
-            this.btbSelectFolder.Size = new System.Drawing.Size(225, 77);
+            this.btbSelectFolder.Size = new System.Drawing.Size(225, 58);
             this.btbSelectFolder.TabIndex = 2;
             this.btbSelectFolder.Text = "Выбрать папку";
             this.btbSelectFolder.UseVisualStyleBackColor = true;
@@ -74,7 +82,7 @@ namespace Quiz_That_Tune
             // 
             this.cbAllDirectories.AutoSize = true;
             this.cbAllDirectories.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAllDirectories.Location = new System.Drawing.Point(543, 277);
+            this.cbAllDirectories.Location = new System.Drawing.Point(594, 268);
             this.cbAllDirectories.Name = "cbAllDirectories";
             this.cbAllDirectories.Size = new System.Drawing.Size(247, 37);
             this.cbAllDirectories.TabIndex = 3;
@@ -83,34 +91,114 @@ namespace Quiz_That_Tune
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.Color.Lime;
             this.btnOK.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.ForeColor = System.Drawing.Color.Green;
-            this.btnOK.Location = new System.Drawing.Point(489, 372);
+            this.btnOK.ForeColor = System.Drawing.Color.White;
+            this.btnOK.Location = new System.Drawing.Point(700, 459);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(127, 48);
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "ОК";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCancel.Location = new System.Drawing.Point(643, 372);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(700, 554);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 48);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Отмена";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // gbGameSettings
+            // 
+            this.gbGameSettings.Controls.Add(this.cbRandomStart);
+            this.gbGameSettings.Controls.Add(this.cbMusicDuration);
+            this.gbGameSettings.Controls.Add(this.cbGameDuration);
+            this.gbGameSettings.Controls.Add(this.label2);
+            this.gbGameSettings.Controls.Add(this.label1);
+            this.gbGameSettings.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbGameSettings.Location = new System.Drawing.Point(12, 339);
+            this.gbGameSettings.Name = "gbGameSettings";
+            this.gbGameSettings.Size = new System.Drawing.Size(511, 283);
+            this.gbGameSettings.TabIndex = 6;
+            this.gbGameSettings.TabStop = false;
+            this.gbGameSettings.Text = "Настройки игры";
+            // 
+            // cbGameDuration
+            // 
+            this.cbGameDuration.FormattingEnabled = true;
+            this.cbGameDuration.Items.AddRange(new object[] {
+            "30",
+            "45",
+            "60",
+            "90",
+            "120"});
+            this.cbGameDuration.Location = new System.Drawing.Point(358, 86);
+            this.cbGameDuration.Name = "cbGameDuration";
+            this.cbGameDuration.Size = new System.Drawing.Size(121, 39);
+            this.cbGameDuration.TabIndex = 7;
+            this.cbGameDuration.Text = "60";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(6, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(186, 33);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Время на ответ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(6, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(318, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Продолжительность игры";
+            // 
+            // cbMusicDuration
+            // 
+            this.cbMusicDuration.FormattingEnabled = true;
+            this.cbMusicDuration.Items.AddRange(new object[] {
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35"});
+            this.cbMusicDuration.Location = new System.Drawing.Point(358, 156);
+            this.cbMusicDuration.Name = "cbMusicDuration";
+            this.cbMusicDuration.Size = new System.Drawing.Size(121, 39);
+            this.cbMusicDuration.TabIndex = 8;
+            this.cbMusicDuration.Text = "20";
+            // 
+            // cbRandomStart
+            // 
+            this.cbRandomStart.AutoSize = true;
+            this.cbRandomStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbRandomStart.Location = new System.Drawing.Point(12, 222);
+            this.cbRandomStart.Name = "cbRandomStart";
+            this.cbRandomStart.Size = new System.Drawing.Size(389, 37);
+            this.cbRandomStart.TabIndex = 7;
+            this.cbRandomStart.Text = "Начинать со случайного места";
+            this.cbRandomStart.UseVisualStyleBackColor = true;
             // 
             // fParams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(802, 453);
+            this.ClientSize = new System.Drawing.Size(882, 623);
+            this.Controls.Add(this.gbGameSettings);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cbAllDirectories);
@@ -120,6 +208,9 @@ namespace Quiz_That_Tune
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fParams";
             this.Text = "Настройки";
+            this.Load += new System.EventHandler(this.fParams_Load);
+            this.gbGameSettings.ResumeLayout(false);
+            this.gbGameSettings.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +224,11 @@ namespace Quiz_That_Tune
         private System.Windows.Forms.CheckBox cbAllDirectories;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.GroupBox gbGameSettings;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbGameDuration;
+        private System.Windows.Forms.ComboBox cbMusicDuration;
+        private System.Windows.Forms.CheckBox cbRandomStart;
     }
 }

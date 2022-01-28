@@ -27,5 +27,11 @@ namespace Quiz_That_Tune
         {
             _formGame.ShowDialog();  // показать форму "игра"
         }
+
+        private void fMain_Load(object sender, EventArgs e)
+        {
+            Quiz.ReadParams();
+            Quiz.ReadMusic();
+        }
     }
 }

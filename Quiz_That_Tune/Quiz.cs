@@ -17,12 +17,19 @@ namespace Quiz_That_Tune
 
         public static void ReadMusic()
         {
-            string[] musicFiles =
-                Directory.GetFiles(LastFolder, "*.mp3",
-                    AllDirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
+            try
+            {
+                string[] musicFiles =
+                          Directory.GetFiles(LastFolder, "*.mp3",
+                              AllDirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
 
-            TrackList.Clear();
-            TrackList.AddRange(musicFiles);
+                TrackList.Clear();
+                TrackList.AddRange(musicFiles);
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         static string regKeyName = "SOFTWARE\\MyMusicProject\\ThatTune"; // ключ в реестре
@@ -35,7 +42,7 @@ namespace Quiz_That_Tune
             {
                 registryKey =
                     Registry.CurrentUser.CreateSubKey(regKeyName); // создаем новый вложенный раздел или открываем существующий
-                                                             // вложенный раздел
+                                                                   // вложенный раздел
 
                 if (registryKey == null) // если не получилось открыть
                 {
@@ -44,9 +51,9 @@ namespace Quiz_That_Tune
 
                 // если все получилось
                 registryKey.SetValue("LastFolder", LastFolder);
-                registryKey.SetValue("RandomStart", RandomStart);
                 registryKey.SetValue("GameDuration", GameDuration);
                 registryKey.SetValue("MusicDuration", MusicDuration);
+                registryKey.SetValue("RandomStart", RandomStart);
                 registryKey.SetValue("AllDirectories", AllDirectories);
 
             }
@@ -70,10 +77,10 @@ namespace Quiz_That_Tune
 
                 if (registryKey != null)
                 {
-                    LastFolder = (string)registryKey.GetValue("LastFolder", LastFolder);
-                    RandomStart = Convert.ToBoolean(registryKey.GetValue("Random", false));
-                    GameDuration = (int)registryKey.GetValue("GameDuration", GameDuration);
-                    MusicDuration = (int)registryKey.GetValue("MusicDuration", MusicDuration);
+                    LastFolder = (string)registryKey.GetValue("LastFolder");
+                    GameDuration = (int)registryKey.GetValue("GameDuration");
+                    MusicDuration = (int)registryKey.GetValue("MusicDuration");
+                    RandomStart = Convert.ToBoolean(registryKey.GetValue("RandomStart", false));
                     AllDirectories = Convert.ToBoolean(registryKey.GetValue("AllDirectories", false));
                 }
             }
