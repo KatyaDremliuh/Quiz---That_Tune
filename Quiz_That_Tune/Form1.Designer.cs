@@ -52,7 +52,7 @@ namespace Quiz_That_Tune
             // 
             // btnPlay
             // 
-            this.btnPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnPlay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPlay.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlay.ForeColor = System.Drawing.Color.Green;
             this.btnPlay.Location = new System.Drawing.Point(515, 32);
@@ -81,6 +81,7 @@ namespace Quiz_That_Tune
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(802, 453);
             this.Controls.Add(this.btnExit);
@@ -91,6 +92,7 @@ namespace Quiz_That_Tune
             this.Text = "Угадай мелодию";
             this.Load += new System.EventHandler(this.fMain_Load);
             this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -37,11 +37,11 @@ namespace Quiz_That_Tune
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.gbGameSettings = new System.Windows.Forms.GroupBox();
+            this.cbRandomStart = new System.Windows.Forms.CheckBox();
+            this.cbMusicDuration = new System.Windows.Forms.ComboBox();
             this.cbGameDuration = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbMusicDuration = new System.Windows.Forms.ComboBox();
-            this.cbRandomStart = new System.Windows.Forms.CheckBox();
             this.gbGameSettings.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +130,33 @@ namespace Quiz_That_Tune
             this.gbGameSettings.TabStop = false;
             this.gbGameSettings.Text = "Настройки игры";
             // 
+            // cbRandomStart
+            // 
+            this.cbRandomStart.AutoSize = true;
+            this.cbRandomStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbRandomStart.Location = new System.Drawing.Point(12, 222);
+            this.cbRandomStart.Name = "cbRandomStart";
+            this.cbRandomStart.Size = new System.Drawing.Size(389, 37);
+            this.cbRandomStart.TabIndex = 7;
+            this.cbRandomStart.Text = "Начинать со случайного места";
+            this.cbRandomStart.UseVisualStyleBackColor = true;
+            // 
+            // cbMusicDuration
+            // 
+            this.cbMusicDuration.FormattingEnabled = true;
+            this.cbMusicDuration.Items.AddRange(new object[] {
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35"});
+            this.cbMusicDuration.Location = new System.Drawing.Point(358, 156);
+            this.cbMusicDuration.Name = "cbMusicDuration";
+            this.cbMusicDuration.Size = new System.Drawing.Size(121, 39);
+            this.cbMusicDuration.TabIndex = 8;
+            this.cbMusicDuration.Text = "20";
+            // 
             // cbGameDuration
             // 
             this.cbGameDuration.FormattingEnabled = true;
@@ -164,33 +191,6 @@ namespace Quiz_That_Tune
             this.label1.Size = new System.Drawing.Size(318, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Продолжительность игры";
-            // 
-            // cbMusicDuration
-            // 
-            this.cbMusicDuration.FormattingEnabled = true;
-            this.cbMusicDuration.Items.AddRange(new object[] {
-            "10",
-            "15",
-            "20",
-            "25",
-            "30",
-            "35"});
-            this.cbMusicDuration.Location = new System.Drawing.Point(358, 156);
-            this.cbMusicDuration.Name = "cbMusicDuration";
-            this.cbMusicDuration.Size = new System.Drawing.Size(121, 39);
-            this.cbMusicDuration.TabIndex = 8;
-            this.cbMusicDuration.Text = "20";
-            // 
-            // cbRandomStart
-            // 
-            this.cbRandomStart.AutoSize = true;
-            this.cbRandomStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbRandomStart.Location = new System.Drawing.Point(12, 222);
-            this.cbRandomStart.Name = "cbRandomStart";
-            this.cbRandomStart.Size = new System.Drawing.Size(389, 37);
-            this.cbRandomStart.TabIndex = 7;
-            this.cbRandomStart.Text = "Начинать со случайного места";
-            this.cbRandomStart.UseVisualStyleBackColor = true;
             // 
             // fParams
             // 

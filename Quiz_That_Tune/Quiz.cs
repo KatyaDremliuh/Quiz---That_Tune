@@ -43,7 +43,7 @@ namespace Quiz_That_Tune
                 registryKey =
                     Registry.CurrentUser.CreateSubKey(regKeyName); // создаем новый вложенный раздел или открываем существующий
                                                                    // вложенный раздел
-
+                                                                   
                 if (registryKey == null) // если не получилось открыть
                 {
                     return;
@@ -55,7 +55,6 @@ namespace Quiz_That_Tune
                 registryKey.SetValue("MusicDuration", MusicDuration);
                 registryKey.SetValue("RandomStart", RandomStart);
                 registryKey.SetValue("AllDirectories", AllDirectories);
-
             }
             finally // если реестр (regedit) создался, то закрываем ключ
             {
@@ -77,9 +76,9 @@ namespace Quiz_That_Tune
 
                 if (registryKey != null)
                 {
-                    LastFolder = (string)registryKey.GetValue("LastFolder");
-                    GameDuration = (int)registryKey.GetValue("GameDuration");
-                    MusicDuration = (int)registryKey.GetValue("MusicDuration");
+                    LastFolder = Convert.ToString(registryKey.GetValue("LastFolder"));
+                    GameDuration = Convert.ToInt32(registryKey.GetValue("GameDuration"));
+                    MusicDuration = Convert.ToInt32(registryKey.GetValue("MusicDuration"));
                     RandomStart = Convert.ToBoolean(registryKey.GetValue("RandomStart", false));
                     AllDirectories = Convert.ToBoolean(registryKey.GetValue("AllDirectories", false));
                 }
