@@ -37,11 +37,15 @@ namespace Quiz_That_Tune
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.gbGameSettings = new System.Windows.Forms.GroupBox();
+            this.lblPlayer2 = new System.Windows.Forms.Label();
             this.cbRandomStart = new System.Windows.Forms.CheckBox();
             this.cbMusicDuration = new System.Windows.Forms.ComboBox();
             this.cbGameDuration = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblPlayer1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.gbGameSettings.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +98,7 @@ namespace Quiz_That_Tune
             this.btnOK.BackColor = System.Drawing.Color.Lime;
             this.btnOK.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(700, 459);
+            this.btnOK.Location = new System.Drawing.Point(734, 339);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(127, 48);
             this.btnOK.TabIndex = 4;
@@ -107,7 +111,7 @@ namespace Quiz_That_Tune
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(700, 554);
+            this.btnCancel.Location = new System.Drawing.Point(734, 561);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 48);
             this.btnCancel.TabIndex = 5;
@@ -129,6 +133,16 @@ namespace Quiz_That_Tune
             this.gbGameSettings.TabIndex = 6;
             this.gbGameSettings.TabStop = false;
             this.gbGameSettings.Text = "Настройки игры";
+            // 
+            // lblPlayer2
+            // 
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer2.Location = new System.Drawing.Point(497, 501);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(101, 29);
+            this.lblPlayer2.TabIndex = 10;
+            this.lblPlayer2.Text = "Игрок 2";
             // 
             // cbRandomStart
             // 
@@ -192,12 +206,46 @@ namespace Quiz_That_Tune
             this.label1.TabIndex = 0;
             this.label1.Text = "Продолжительность игры";
             // 
+            // lblPlayer1
+            // 
+            this.lblPlayer1.AutoSize = true;
+            this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer1.Location = new System.Drawing.Point(497, 431);
+            this.lblPlayer1.Name = "lblPlayer1";
+            this.lblPlayer1.Size = new System.Drawing.Size(101, 29);
+            this.lblPlayer1.TabIndex = 9;
+            this.lblPlayer1.Text = "Игрок 1";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(604, 428);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 34);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "Q";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(604, 500);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 34);
+            this.comboBox2.TabIndex = 8;
+            this.comboBox2.Text = "P";
+            // 
             // fParams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(882, 623);
+            this.Controls.Add(this.lblPlayer2);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.lblPlayer1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.gbGameSettings);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
@@ -230,5 +278,9 @@ namespace Quiz_That_Tune
         private System.Windows.Forms.ComboBox cbGameDuration;
         private System.Windows.Forms.ComboBox cbMusicDuration;
         private System.Windows.Forms.CheckBox cbRandomStart;
+        private System.Windows.Forms.Label lblPlayer2;
+        private System.Windows.Forms.Label lblPlayer1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

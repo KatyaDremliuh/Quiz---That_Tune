@@ -56,14 +56,55 @@ namespace Quiz_That_Tune
 
         private void btbPause_Click(object sender, EventArgs e)
         {
-            timer.Stop();
-            WMP.Ctlcontrols.pause();
+            GamePause();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
+            GamePlay();
+        }
+
+        // поставить игру на паузу
+        private void GamePause()
+        {
+            timer.Stop();
+            WMP.Ctlcontrols.pause();
+        }
+
+        // продолжить игру
+        private void GamePlay()
+        {
             timer.Start();
-            WMP.Ctlcontrols.play();
+            WMP.Ctlcontrols.pause();
+        }
+
+        private void fGame_KeyDown(object sender, KeyEventArgs keyEventArgs)
+        {
+            // P.S. игрок 1 жмёт кнопку Q. Игрок 2 - P
+
+            if (keyEventArgs.KeyData == Keys.Q)
+            {
+                PlayerWantsToGiveHisAnswer("Игрок № 1", lblScorePlayer1);
+            }
+
+            if (keyEventArgs.KeyData == Keys.P)
+            {
+                PlayerWantsToGiveHisAnswer("Игрок № 2", lblScorePlayer2);
+            }
+        }
+
+        private void PlayerWantsToGiveHisAnswer(string player, Label labelPlayerScore)
+        {
+            GamePause();
+
+            if (MessageBox.Show("Правильный ответ?", player, MessageBoxButtons.YesNo) == DialogResult.Yes) // если правильно ответил, добавить ему очки
+            {
+                labelPlayerScore.Text = Convert.ToString(Convert.ToInt32(labelPlayerScore.Text) + 1);
+
+                MakeSong(); // и запустить след. песню
+            }
+
+            GamePlay();
         }
     }
 }
