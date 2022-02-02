@@ -8,6 +8,7 @@ namespace Quiz_That_Tune
     {
         private Random random = new Random();
         private int _musicDuration = Quiz.MusicDuration;
+        private bool[] players = new bool[2];
 
         public fGame()
         {
@@ -31,6 +32,9 @@ namespace Quiz_That_Tune
                 Quiz.TrackList.RemoveAt(songNumber); // убираем песню, кот. уже была
 
                 lblSongsCounter.Text = Quiz.TrackList.Count.ToString(); // показать, сколько осталось песен в списке
+
+                players[0] = false;
+                players[1] = false;
             }
         }
 
@@ -109,12 +113,17 @@ namespace Quiz_That_Tune
         {
             // P.S. игрок 1 жмёт кнопку Q. Игрок 2 - P
 
-            if (keyEventArgs.KeyData == Keys.Q)
+            if (!timer.Enabled) // запретить нажатие клавиш, пока игра не началась
+            {
+                return;
+            }
+
+            if (!players[0] && keyEventArgs.KeyData == Keys.Q)
             {
                 PlayerWantsToGiveHisAnswer("Игрок № 1", lblScorePlayer1);
             }
 
-            if (keyEventArgs.KeyData == Keys.P)
+            if (!players[1] && keyEventArgs.KeyData == Keys.P)
             {
                 PlayerWantsToGiveHisAnswer("Игрок № 2", lblScorePlayer2);
             }
@@ -131,11 +140,15 @@ namespace Quiz_That_Tune
             {
                 SoundPlayer soundPlayer = new SoundPlayer("Resources\\Player1.wav");
                 soundPlayer.PlaySync();
+
+                players[0] = true;
             }
             if (player == "Игрок № 2")
             {
                 SoundPlayer soundPlayer = new SoundPlayer("Resources\\Player2.wav");
                 soundPlayer.PlaySync();
+
+                players[1] = true;
             }
 
 
@@ -158,6 +171,18 @@ namespace Quiz_That_Tune
                     // со случайного места вкл песню
                     WMP.Ctlcontrols.currentPosition = random.Next(0, (int)WMP.currentMedia.duration / 2);
                 }
+            }
+        }
+
+        private void lblScorePlayer1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ((Label)sender).Text = Convert.ToString(Convert.ToInt32(((Label)sender).Text) + 1);
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Label)sender).Text = Convert.ToString(Convert.ToInt32(((Label)sender).Text) - 1);
             }
         }
     }

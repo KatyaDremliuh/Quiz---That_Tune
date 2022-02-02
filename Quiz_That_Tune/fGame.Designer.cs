@@ -89,6 +89,7 @@ namespace Quiz_That_Tune
             this.lblScorePlayer1.Size = new System.Drawing.Size(36, 39);
             this.lblScorePlayer1.TabIndex = 3;
             this.lblScorePlayer1.Text = "0";
+            this.lblScorePlayer1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblScorePlayer1_MouseClick);
             // 
             // lblPlayer2
             // 
@@ -109,6 +110,7 @@ namespace Quiz_That_Tune
             this.lblScorePlayer2.Size = new System.Drawing.Size(36, 39);
             this.lblScorePlayer2.TabIndex = 5;
             this.lblScorePlayer2.Text = "0";
+            this.lblScorePlayer2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblScorePlayer1_MouseClick);
             // 
             // btbPause
             // 
@@ -161,7 +163,7 @@ namespace Quiz_That_Tune
             this.lblMusicDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMusicDuration.Location = new System.Drawing.Point(351, 37);
             this.lblMusicDuration.Name = "lblMusicDuration";
-            this.lblMusicDuration.Size = new System.Drawing.Size(36, 39);
+            this.lblMusicDuration.Size = new System.Drawing.Size(35, 38);
             this.lblMusicDuration.TabIndex = 10;
             this.lblMusicDuration.Text = "0";
             // 
