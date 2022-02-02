@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Quiz_That_Tune
@@ -125,6 +126,18 @@ namespace Quiz_That_Tune
 
             fMessage fMessage = new fMessage();
             fMessage.lblMessage.Text = player;
+
+            if (player == "Игрок № 1")
+            {
+                SoundPlayer soundPlayer = new SoundPlayer("Resources\\Player1.wav");
+                soundPlayer.PlaySync();
+            }
+            if (player == "Игрок № 2")
+            {
+                SoundPlayer soundPlayer = new SoundPlayer("Resources\\Player2.wav");
+                soundPlayer.PlaySync();
+            }
+
 
             if (fMessage.ShowDialog() == DialogResult.Yes) // если правильно ответил, добавить ему очки
             {

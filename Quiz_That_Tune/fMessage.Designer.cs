@@ -29,18 +29,22 @@ namespace Quiz_That_Tune
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMessage));
             this.lblMessage = new System.Windows.Forms.Label();
             this.btnYes = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
             this.lblMessageQuestion = new System.Windows.Forms.Label();
+            this.timerForGiveAnAnswer = new System.Windows.Forms.Timer(this.components);
+            this.lblTimerToGiveAnAnswer = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(24, 9);
+            this.lblMessage.Location = new System.Drawing.Point(314, 168);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(79, 29);
             this.lblMessage.TabIndex = 0;
@@ -76,17 +80,45 @@ namespace Quiz_That_Tune
             this.lblMessageQuestion.TabIndex = 3;
             this.lblMessageQuestion.Text = "дал верный ответ?";
             // 
+            // timerForGiveAnAnswer
+            // 
+            this.timerForGiveAnAnswer.Interval = 1000;
+            this.timerForGiveAnAnswer.Tick += new System.EventHandler(this.timerForGiveAnAnswer_Tick);
+            // 
+            // lblTimerToGiveAnAnswer
+            // 
+            this.lblTimerToGiveAnAnswer.AutoSize = true;
+            this.lblTimerToGiveAnAnswer.Font = new System.Drawing.Font("Comic Sans MS", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimerToGiveAnAnswer.Location = new System.Drawing.Point(321, 41);
+            this.lblTimerToGiveAnAnswer.Name = "lblTimerToGiveAnAnswer";
+            this.lblTimerToGiveAnAnswer.Size = new System.Drawing.Size(72, 84);
+            this.lblTimerToGiveAnAnswer.TabIndex = 4;
+            this.lblTimerToGiveAnAnswer.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(172, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Время на ответ";
+            // 
             // fMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTimerToGiveAnAnswer);
             this.Controls.Add(this.lblMessageQuestion);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.lblMessage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fMessage";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fMessage_FormClosed);
+            this.Load += new System.EventHandler(this.fMessage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,5 +129,8 @@ namespace Quiz_That_Tune
         private System.Windows.Forms.Button btnNo;
         public System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Label lblMessageQuestion;
+        private System.Windows.Forms.Timer timerForGiveAnAnswer;
+        private System.Windows.Forms.Label lblTimerToGiveAnAnswer;
+        private System.Windows.Forms.Label label1;
     }
 }
