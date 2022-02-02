@@ -108,11 +108,11 @@ namespace Quiz_That_Tune
             // lblShowTheCorrectAnswer
             // 
             this.lblShowTheCorrectAnswer.AutoSize = true;
-            this.lblShowTheCorrectAnswer.Location = new System.Drawing.Point(86, 407);
+            this.lblShowTheCorrectAnswer.Location = new System.Drawing.Point(73, 410);
             this.lblShowTheCorrectAnswer.Name = "lblShowTheCorrectAnswer";
-            this.lblShowTheCorrectAnswer.Size = new System.Drawing.Size(111, 17);
+            this.lblShowTheCorrectAnswer.Size = new System.Drawing.Size(282, 17);
             this.lblShowTheCorrectAnswer.TabIndex = 6;
-            this.lblShowTheCorrectAnswer.Text = "Показать ответ";
+            this.lblShowTheCorrectAnswer.Text = "Нажми, чтобы увидеть правильный ответ";
             this.lblShowTheCorrectAnswer.Click += new System.EventHandler(this.lblShowTheCorrectAnswer_Click);
             // 
             // fMessage

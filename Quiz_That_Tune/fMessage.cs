@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Media;
 using System.Windows.Forms;
+using TagLib;
 
 namespace Quiz_That_Tune
 {
     public partial class fMessage : Form
     {
-        private int timeToGiveAnAnswer = 10;
+        private int _timeToGiveAnAnswer = 10;
 
         public fMessage()
         {
@@ -15,16 +16,16 @@ namespace Quiz_That_Tune
 
         private void fMessage_Load(object sender, EventArgs e)
         {
-            timeToGiveAnAnswer = 10;
+            _timeToGiveAnAnswer = 10;
             timerForGiveAnAnswer.Start();
         }
 
         private void timerForGiveAnAnswer_Tick(object sender, EventArgs e)
         {
-            timeToGiveAnAnswer--; // время тикает вниз
-            lblTimerToGiveAnAnswer.Text = timeToGiveAnAnswer.ToString(); // выводим это время
+            _timeToGiveAnAnswer--; // время тикает вниз
+            lblTimerToGiveAnAnswer.Text = _timeToGiveAnAnswer.ToString(); // выводим это время
 
-            if (timeToGiveAnAnswer == 0)
+            if (_timeToGiveAnAnswer == 0)
             {
                 timerForGiveAnAnswer.Stop(); // таймер останавливается
 
@@ -42,7 +43,10 @@ namespace Quiz_That_Tune
 
         private void lblShowTheCorrectAnswer_Click(object sender, EventArgs e)
         {
-            lblShowTheCorrectAnswer.Text = Quiz.CorrectAnswer;
+            File mp3File = TagLib.File.Create(Quiz.CorrectAnswer);
+            lblShowTheCorrectAnswer.Text = $"{mp3File.Tag.FirstPerformer} {mp3File.Tag.Title}";
+            
+            //lblShowTheCorrectAnswer.Text = Quiz.CorrectAnswer;
         }
     }
 }
