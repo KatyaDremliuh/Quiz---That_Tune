@@ -6,6 +6,7 @@ namespace Quiz_That_Tune
     public partial class fGame : Form
     {
         private Random random = new Random();
+        private int _musicDuration = Quiz.MusicDuration;
 
         public fGame()
         {
@@ -14,13 +15,22 @@ namespace Quiz_That_Tune
 
         void MakeSong() // загадываем песню
         {
-            int songNumber = random.Next(0, Quiz.TrackList.Count);
-            WMP.URL = Quiz.TrackList[songNumber];
-            // WMP.Ctlcontrols.play();
+            if (Quiz.TrackList.Count == 0)
+            {
+                FinishGame();
+            }
+            else
+            {
+                _musicDuration = Quiz.MusicDuration;
 
-            Quiz.TrackList.RemoveAt(songNumber); // убираем песню, кот. уже была
+                int songNumber = random.Next(0, Quiz.TrackList.Count);
+                WMP.URL = Quiz.TrackList[songNumber];
+                // WMP.Ctlcontrols.play();
 
-            lblSongsCounter.Text = Quiz.TrackList.Count.ToString(); // показать, сколько осталось песен в списке
+                Quiz.TrackList.RemoveAt(songNumber); // убираем песню, кот. уже была
+
+                lblSongsCounter.Text = Quiz.TrackList.Count.ToString(); // показать, сколько осталось песен в списке
+            }
         }
 
         private void btbNext_Click(object sender, EventArgs e)
@@ -42,16 +52,32 @@ namespace Quiz_That_Tune
             progressBar.Value = 0;
             progressBar.Minimum = 0;
             progressBar.Maximum = Quiz.GameDuration;
+
+            lblMusicDuration.Text = _musicDuration.ToString();
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
             progressBar.Value++;
+            _musicDuration--;
+            lblMusicDuration.Text = _musicDuration.ToString();
 
             if (progressBar.Value == progressBar.Maximum)
             {
-                timer.Stop();
+                FinishGame();
+                return;
             }
+
+            if (_musicDuration == 0) // если песня закончилась, включить следующую
+            {
+                MakeSong();
+            }
+        }
+
+        private void FinishGame() // закончить игру
+        {
+            timer.Stop();
+            WMP.Ctlcontrols.stop();
         }
 
         private void btbPause_Click(object sender, EventArgs e)
@@ -97,7 +123,7 @@ namespace Quiz_That_Tune
         {
             GamePause();
 
-            if (MessageBox.Show("Правильный ответ?", player, MessageBoxButtons.YesNo) == DialogResult.Yes) // если правильно ответил, добавить ему очки
+            if (MessageBox.Show(@"Правильный ответ?", player, MessageBoxButtons.YesNo) == DialogResult.Yes) // если правильно ответил, добавить ему очки
             {
                 labelPlayerScore.Text = Convert.ToString(Convert.ToInt32(labelPlayerScore.Text) + 1);
 

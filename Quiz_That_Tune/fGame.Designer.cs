@@ -42,6 +42,9 @@ namespace Quiz_That_Tune
             this.lblSongsCounter = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblMusicDuration = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,12 +154,43 @@ namespace Quiz_That_Tune
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // lblMusicDuration
+            // 
+            this.lblMusicDuration.AutoSize = true;
+            this.lblMusicDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMusicDuration.Location = new System.Drawing.Point(351, 37);
+            this.lblMusicDuration.Name = "lblMusicDuration";
+            this.lblMusicDuration.Size = new System.Drawing.Size(36, 39);
+            this.lblMusicDuration.TabIndex = 10;
+            this.lblMusicDuration.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(306, 153);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Количество песен";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(306, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Время на ответ";
+            // 
             // fGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(802, 453);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMusicDuration);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.lblSongsCounter);
             this.Controls.Add(this.btnContinue);
@@ -193,5 +227,8 @@ namespace Quiz_That_Tune
         private System.Windows.Forms.Label lblSongsCounter;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label lblMusicDuration;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

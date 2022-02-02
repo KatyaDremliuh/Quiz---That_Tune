@@ -37,12 +37,12 @@ namespace Quiz_That_Tune
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.gbGameSettings = new System.Windows.Forms.GroupBox();
-            this.lblPlayer2 = new System.Windows.Forms.Label();
             this.cbRandomStart = new System.Windows.Forms.CheckBox();
             this.cbMusicDuration = new System.Windows.Forms.ComboBox();
             this.cbGameDuration = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblPlayer2 = new System.Windows.Forms.Label();
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -134,16 +134,6 @@ namespace Quiz_That_Tune
             this.gbGameSettings.TabStop = false;
             this.gbGameSettings.Text = "Настройки игры";
             // 
-            // lblPlayer2
-            // 
-            this.lblPlayer2.AutoSize = true;
-            this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayer2.Location = new System.Drawing.Point(497, 501);
-            this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(101, 29);
-            this.lblPlayer2.TabIndex = 10;
-            this.lblPlayer2.Text = "Игрок 2";
-            // 
             // cbRandomStart
             // 
             this.cbRandomStart.AutoSize = true;
@@ -206,13 +196,23 @@ namespace Quiz_That_Tune
             this.label1.TabIndex = 0;
             this.label1.Text = "Продолжительность игры";
             // 
+            // lblPlayer2
+            // 
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer2.Location = new System.Drawing.Point(497, 501);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(89, 26);
+            this.lblPlayer2.TabIndex = 10;
+            this.lblPlayer2.Text = "Игрок 2";
+            // 
             // lblPlayer1
             // 
             this.lblPlayer1.AutoSize = true;
             this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer1.Location = new System.Drawing.Point(497, 431);
             this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(101, 29);
+            this.lblPlayer1.Size = new System.Drawing.Size(89, 26);
             this.lblPlayer1.TabIndex = 9;
             this.lblPlayer1.Text = "Игрок 1";
             // 
