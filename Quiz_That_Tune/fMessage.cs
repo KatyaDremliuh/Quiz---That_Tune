@@ -39,5 +39,10 @@ namespace Quiz_That_Tune
         {
             timerForGiveAnAnswer.Stop();
         }
+
+        private void lblShowTheCorrectAnswer_Click(object sender, EventArgs e)
+        {
+            lblShowTheCorrectAnswer.Text = Quiz.CorrectAnswer;
+        }
     }
 }

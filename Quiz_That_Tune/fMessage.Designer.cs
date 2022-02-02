@@ -38,6 +38,7 @@ namespace Quiz_That_Tune
             this.timerForGiveAnAnswer = new System.Windows.Forms.Timer(this.components);
             this.lblTimerToGiveAnAnswer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblShowTheCorrectAnswer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblMessage
@@ -104,11 +105,22 @@ namespace Quiz_That_Tune
             this.label1.TabIndex = 5;
             this.label1.Text = "Время на ответ";
             // 
+            // lblShowTheCorrectAnswer
+            // 
+            this.lblShowTheCorrectAnswer.AutoSize = true;
+            this.lblShowTheCorrectAnswer.Location = new System.Drawing.Point(86, 407);
+            this.lblShowTheCorrectAnswer.Name = "lblShowTheCorrectAnswer";
+            this.lblShowTheCorrectAnswer.Size = new System.Drawing.Size(111, 17);
+            this.lblShowTheCorrectAnswer.TabIndex = 6;
+            this.lblShowTheCorrectAnswer.Text = "Показать ответ";
+            this.lblShowTheCorrectAnswer.Click += new System.EventHandler(this.lblShowTheCorrectAnswer_Click);
+            // 
             // fMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblShowTheCorrectAnswer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTimerToGiveAnAnswer);
             this.Controls.Add(this.lblMessageQuestion);
@@ -132,5 +144,6 @@ namespace Quiz_That_Tune
         private System.Windows.Forms.Timer timerForGiveAnAnswer;
         private System.Windows.Forms.Label lblTimerToGiveAnAnswer;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblShowTheCorrectAnswer;
     }
 }

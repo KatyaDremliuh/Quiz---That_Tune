@@ -14,6 +14,7 @@ namespace Quiz_That_Tune
         public static bool RandomStart = false; // начинать песню с начала или со случайного места
         public static string LastFolder = string.Empty; // папка, которую задаем при выборе музыки
         public static bool AllDirectories = false; // обрабатывать ли внутрненние директории
+        public static string CorrectAnswer = string.Empty;
 
         public static void ReadMusic()
         {

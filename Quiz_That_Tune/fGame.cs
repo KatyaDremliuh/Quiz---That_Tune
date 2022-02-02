@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Media;
 using System.Windows.Forms;
 
@@ -27,6 +28,7 @@ namespace Quiz_That_Tune
 
                 int songNumber = random.Next(0, Quiz.TrackList.Count);
                 WMP.URL = Quiz.TrackList[songNumber];
+                Quiz.CorrectAnswer = Path.GetFileNameWithoutExtension(WMP.URL);
                 // WMP.Ctlcontrols.play();
 
                 Quiz.TrackList.RemoveAt(songNumber); // убираем песню, кот. уже была
