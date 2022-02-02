@@ -123,7 +123,10 @@ namespace Quiz_That_Tune
         {
             GamePause();
 
-            if (MessageBox.Show(@"Правильный ответ?", player, MessageBoxButtons.YesNo) == DialogResult.Yes) // если правильно ответил, добавить ему очки
+            fMessage fMessage = new fMessage();
+            fMessage.lblMessage.Text = player;
+
+            if (fMessage.ShowDialog() == DialogResult.Yes) // если правильно ответил, добавить ему очки
             {
                 labelPlayerScore.Text = Convert.ToString(Convert.ToInt32(labelPlayerScore.Text) + 1);
 
@@ -131,6 +134,18 @@ namespace Quiz_That_Tune
             }
 
             GamePlay();
+        }
+
+        private void WMP_OpenStateChange(object sender, AxWMPLib._WMPOCXEvents_OpenStateChangeEvent e)
+        {
+            if (Quiz.RandomStart)
+            {
+                if (WMP.openState == WMPLib.WMPOpenState.wmposMediaOpen)
+                {
+                    // со случайного места вкл песню
+                    WMP.Ctlcontrols.currentPosition = random.Next(0, (int)WMP.currentMedia.duration / 2);
+                }
+            }
         }
     }
 }
