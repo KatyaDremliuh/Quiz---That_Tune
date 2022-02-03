@@ -43,10 +43,7 @@ namespace Quiz_That_Tune
 
         private void lblShowTheCorrectAnswer_Click(object sender, EventArgs e)
         {
-            File mp3File = TagLib.File.Create(Quiz.CorrectAnswer);
-            lblShowTheCorrectAnswer.Text = $"{mp3File.Tag.FirstPerformer} {mp3File.Tag.Title}";
-            
-            //lblShowTheCorrectAnswer.Text = Quiz.CorrectAnswer;
+            lblShowTheCorrectAnswer.Text = Quiz.CorrectAnswer;
         }
     }
 }

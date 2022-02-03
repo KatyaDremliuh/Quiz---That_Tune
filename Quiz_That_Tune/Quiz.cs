@@ -5,17 +5,19 @@ using System.IO;
 
 namespace Quiz_That_Tune
 {
-    static class Quiz
+    public static class Quiz
     {
-        public static List<string> TrackList = new List<string>();
-
-        public static int GameDuration = 60; // продолжительность игры
-        public static int MusicDuration = 10; // сколько звучит песня
+        public static List<string> TrackList = new List<string>(); // список песен
+        public static int GameDuration { get; set; } // продолжительность игры
+        public static int MusicDuration { get; set; } // сколько звучит песня
         public static bool RandomStart = false; // начинать песню с начала или со случайного места
         public static string LastFolder = string.Empty; // папка, которую задаем при выборе музыки
         public static bool AllDirectories = false; // обрабатывать ли внутрненние директории
         public static string CorrectAnswer = string.Empty;
 
+        /// <summary>
+        /// Allows to read and to save music to the TrackList.
+        /// </summary>
         public static void ReadMusic()
         {
             try
@@ -33,8 +35,11 @@ namespace Quiz_That_Tune
             }
         }
 
-        static string regKeyName = "SOFTWARE\\MyMusicProject\\ThatTune"; // ключ в реестре
+        private static string regKeyName = "SOFTWARE\\MyMusicProject\\ThatTune"; // ключ в реестре
 
+        /// <summary>
+        /// Allows to work with the registry. To write data to the registry.
+        /// </summary>
         public static void WriteParams()
         {
             RegistryKey registryKey = null;
@@ -44,7 +49,7 @@ namespace Quiz_That_Tune
                 registryKey =
                     Registry.CurrentUser.CreateSubKey(regKeyName); // создаем новый вложенный раздел или открываем существующий
                                                                    // вложенный раздел
-                                                                   
+
                 if (registryKey == null) // если не получилось открыть
                 {
                     return;
@@ -66,6 +71,9 @@ namespace Quiz_That_Tune
             }
         }
 
+        /// <summary>
+        /// Allows to work with the registry. To reat data from the registry.
+        /// </summary>
         public static void ReadParams()
         {
             RegistryKey registryKey = null;

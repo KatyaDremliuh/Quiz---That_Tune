@@ -7,9 +7,9 @@ namespace Quiz_That_Tune
 {
     public partial class fGame : Form
     {
-        private Random random = new Random();
+        private readonly Random _random = new Random();
         private int _musicDuration = Quiz.MusicDuration;
-        private bool[] players = new bool[2];
+        private readonly bool[] _players = new bool[2];
 
         public fGame()
         {
@@ -26,11 +26,10 @@ namespace Quiz_That_Tune
             {
                 _musicDuration = Quiz.MusicDuration;
 
-                int songNumber = random.Next(0, Quiz.TrackList.Count);
+                int songNumber = _random.Next(0, Quiz.TrackList.Count);
                 WMP.URL = Quiz.TrackList[songNumber];
 
-                Quiz.CorrectAnswer = WMP.URL;
-                //Quiz.CorrectAnswer = Path.GetFileNameWithoutExtension(WMP.URL);
+                Quiz.CorrectAnswer = Path.GetFileNameWithoutExtension(WMP.URL);
 
                 // WMP.Ctlcontrols.play();
 
@@ -38,8 +37,8 @@ namespace Quiz_That_Tune
 
                 lblSongsCounter.Text = Quiz.TrackList.Count.ToString(); // показать, сколько осталось песен в списке
 
-                players[0] = false;
-                players[1] = false;
+                _players[0] = false;
+                _players[1] = false;
             }
         }
 
@@ -123,14 +122,14 @@ namespace Quiz_That_Tune
                 return;
             }
 
-            if (!players[0] && keyEventArgs.KeyData == Keys.Q)
+            if (!_players[0] && keyEventArgs.KeyData == Keys.Q)
             {
-                PlayerWantsToGiveHisAnswer("Игрок № 1", lblScorePlayer1);
+                PlayerWantsToGiveHisAnswer("Player № 1", lblScorePlayer1);
             }
 
-            if (!players[1] && keyEventArgs.KeyData == Keys.P)
+            if (!_players[1] && keyEventArgs.KeyData == Keys.P)
             {
-                PlayerWantsToGiveHisAnswer("Игрок № 2", lblScorePlayer2);
+                PlayerWantsToGiveHisAnswer("Player № 2", lblScorePlayer2);
             }
         }
 
@@ -141,19 +140,19 @@ namespace Quiz_That_Tune
             fMessage fMessage = new fMessage();
             fMessage.lblMessage.Text = player;
 
-            if (player == "Игрок № 1")
+            if (player == "Player № 1")
             {
                 SoundPlayer soundPlayer = new SoundPlayer("Resources\\Player1.wav");
                 soundPlayer.PlaySync();
 
-                players[0] = true;
+                _players[0] = true;
             }
-            if (player == "Игрок № 2")
+            if (player == "Player № 2")
             {
                 SoundPlayer soundPlayer = new SoundPlayer("Resources\\Player2.wav");
                 soundPlayer.PlaySync();
 
-                players[1] = true;
+                _players[1] = true;
             }
 
 
@@ -174,7 +173,7 @@ namespace Quiz_That_Tune
                 if (WMP.openState == WMPLib.WMPOpenState.wmposMediaOpen)
                 {
                     // со случайного места вкл песню
-                    WMP.Ctlcontrols.currentPosition = random.Next(0, (int)WMP.currentMedia.duration / 2);
+                    WMP.Ctlcontrols.currentPosition = _random.Next(0, (int)WMP.currentMedia.duration / 2);
                 }
             }
         }
